@@ -1,0 +1,6 @@
+sudo: required
+services: docker
+script:
+  - docker build -t vicenterusso/php:base .
+after_script:
+  - docker images
