@@ -41,5 +41,7 @@ RUN apt-get update \
 
 RUN pecl channel-update https://pecl.php.net/channel.xml \
     && pecl install swoole
+    && pecl install mongodb
+
 
 RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.0
