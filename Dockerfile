@@ -45,3 +45,9 @@ RUN pecl channel-update https://pecl.php.net/channel.xml \
 
 
 RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.0
+
+RUN echo "extension=swoole.so" > /etc/php/8.0/cli/conf.d/20-swoole.ini && \
+    echo "extension=mongodb.so" > /etc/php/8.0/cli/conf.d/20-mongodb.ini
+
+# copying full php.ini
+COPY php.ini /etc/php/8.0/cli/php.ini
